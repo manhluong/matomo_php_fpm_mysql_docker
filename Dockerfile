@@ -19,3 +19,5 @@ RUN curl -O "https://builds.piwik.org/matomo-${matomo_version}.zip" && \
  rm *.html && \
  rm *.zip
 
+# External volume to share matomo code with web server.
+VOLUME /matomo
