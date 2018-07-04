@@ -14,6 +14,8 @@ RUN apt-get update && \
 
 ARG matomo_version=3.5.1
 
+WORKDIR /
+
 RUN curl -O "https://builds.piwik.org/matomo-${matomo_version}.zip" && \
  unzip 'matomo-3.5.1.zip' && \
  rm *.html && \
