@@ -25,3 +25,9 @@ RUN rm *.html && \
 RUN chown -R www-data:www-data /matomo && \
  chmod -R 0777 /matomo
 
+RUN curl -O "https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz" && \
+  tar xvzf "GeoLite2-City.tar.gz" && \
+  mv "GeoLite2-City_20180703/GeoLite2-City.mmdb" "/matomo/misc" && \
+  rm "GeoLite2-City.tar.gz" && \
+  rm -rf "GeoLite2-City_20180703/"
+
